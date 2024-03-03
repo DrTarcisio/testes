@@ -27,7 +27,7 @@ authenticator = stauth.Authenticate(
 )
 
 # +
-st.header(f"Clínica de Anestesia de Muriaé - MG", divider="gray")
+st.header(f"Clínica de Anestesia de Muriaé - MG")
 
 authenticator.login()
 
