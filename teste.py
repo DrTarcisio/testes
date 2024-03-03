@@ -29,7 +29,7 @@ authenticator = stauth.Authenticate(
 # +
 st.header(f"Clínica de Anestesia de Muriaé - MG")
 
-authenticator.login()
+authenticator.login("Login")
 
 # +
 # CARREGA MAIN, se senha correta
