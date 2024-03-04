@@ -10,7 +10,6 @@ credentials:
    logged_in: False
    name: admin
    password: Covid2020
-
 cookie:
  expiry_days: 1
  key: some_signature_key
