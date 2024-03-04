@@ -1,0 +1,17 @@
+credentials:
+ usernames:
+  clianest:
+   email: clianestmuriae@hotmail.com
+   logged_in: False
+   name: Clianest
+   password: Covid2020
+  admin:
+   email: clianestmuriae@hotmail.com
+   logged_in: False
+   name: admin
+   password: Covid2020
+
+cookie:
+ expiry_days: 1
+ key: some_signature_key
+ name: some_cookie_name
