@@ -15,20 +15,20 @@ from sqlalchemy import create_engine, text
 
 st.set_page_config(layout = "wide")
 
-with open('config.yaml') as file:
+with open('../config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 authenticator = stauth.Authenticate(
     config['credentials'],
     config['cookie']['name'],
     config['cookie']['key'],
-    config['cookie']['expiry_days']
+    config['cookie']['expiry_days'],
+    config['preauthorized']
 )
-
 
 st.header(f"Clínica de Anestesia de Muriaé - MG")
 
-authenticator.login("Login","main")
+authenticator.login('Login', 'main')
 
 # CARREGA MAIN, se senha correta
 
