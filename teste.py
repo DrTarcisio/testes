@@ -29,7 +29,7 @@ authenticator = stauth.Authenticate(
 # +
 st.header(f"Clínica de Anestesia de Muriaé - MG")
 
-authenticator.login("Login")
+authenticator.login("Login","main")
 
 # +
 # CARREGA MAIN, se senha correta
@@ -129,7 +129,7 @@ elif st.session_state["authentication_status"]:
     load_data()
 
     with st.sidebar:
-        authenticator.logout()
+        authenticator.logout('Logout', 'main', key='unique_key')
         st.title("Particulares")
 
     create_data = {
