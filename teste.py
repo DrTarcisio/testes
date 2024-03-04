@@ -38,9 +38,7 @@ if st.session_state["authentication_status"] is False:
     st.error("Usuário/Senha inválido(a)")
 elif st.session_state["authentication_status"] is None:
     st.warning("Digite usuário e senha")
-elif st.session_state["authentication_status"]:
-    
-    
+elif st.session_state["authentication_status"]: 
 
     st.write(f'Bem Vindo *{st.session_state["name"]}*')
     st.title(f'Clínica de Anestesia de Muriaé - MG')
@@ -87,7 +85,6 @@ elif st.session_state["authentication_status"]:
 
       FROM [dbo].[FICHA]"""))
 
-
     # Filtrando por Datas
     def data_inicial():
         data_inicio = '2023-01-01'
@@ -109,10 +106,7 @@ elif st.session_state["authentication_status"]:
 
           WHERE DATA_INTERNACAO BETWEEN '{data_inicio}' AND '{data_fim}'"""
 
-
-    # +
     # df_filtrada['DATA_INTERNACAO'] = pd.to_datetime(df_filtrada['DATA_INTERNACAO']).dt.strftime('%Y/%m/%d')
-    # -
 
     def load_data():
         data_inicial()
@@ -149,10 +143,6 @@ elif st.session_state["authentication_status"]:
     all_widgets = sp.create_widgets(df, create_data, ignore_columns=["VALOR","IDADE","NUMERO_DA_FICHA","NOME_DO_PACIENTE", "OBSERVACAO"])
     res = sp.filter_df(df, all_widgets)
     st.write(res)
-
-# -
-
-
 
 
     # !streamlit run clianest.py
