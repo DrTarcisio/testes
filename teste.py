@@ -15,7 +15,7 @@ from sqlalchemy import create_engine, text
 
 st.set_page_config(layout = "wide")
 
-with open('/config.yml') as file:
+with open('https://github.com/DrTarcisio/testes/blob/138304ab9f278ab4d1e25663f40a1168a8b2b96e/config.yml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 # -
 
