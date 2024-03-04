@@ -10,14 +10,13 @@ import streamlit as st
 import streamlit_pandas as sp
 from sqlalchemy import create_engine, text
 
-# +
+
 ## Load Hash_pw
 
 st.set_page_config(layout = "wide")
 
 with open('config.yml') as file:
     config = yaml.load(file, Loader=SafeLoader)
-# -
 
 authenticator = stauth.Authenticate(
     config['credentials'],
@@ -26,20 +25,14 @@ authenticator = stauth.Authenticate(
     config['cookie']['expiry_days']
 )
 
-# +
+
 st.header(f"Clínica de Anestesia de Muriaé - MG")
 
 authenticator.login("Login","main")
 
-# +
 # CARREGA MAIN, se senha correta
 
-if st.session_state["authentication_status"] is False:
-    st.error("Usuário/Senha inválido(a)")
-elif st.session_state["authentication_status"] is None:
-    st.warning("Digite usuário e senha")
-elif st.session_state["authentication_status"]: 
-
+if st.session_state["authentication_status"]:
     st.write(f'Bem Vindo *{st.session_state["name"]}*')
     st.title(f'Clínica de Anestesia de Muriaé - MG')
 
@@ -129,7 +122,7 @@ elif st.session_state["authentication_status"]:
     load_data()
 
     with st.sidebar:
-        authenticator.logout('Logout', 'main', key='unique_key')
+        authenticator.logout('Logout', key='unique_key')
         st.title("Particulares")
 
     create_data = {
@@ -144,5 +137,9 @@ elif st.session_state["authentication_status"]:
     res = sp.filter_df(df, all_widgets)
     st.write(res)
 
+elif st.session_state["authentication_status"] is None:
+    st.warning("Digite usuário e senha")
+elif st.session_state["authentication_status"] is False:
+    st.error("Usuário/Senha inválido(a)")
 
     # !streamlit run clianest.py
