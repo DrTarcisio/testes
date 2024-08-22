@@ -1,8 +1,5 @@
 # +
 import streamlit as st
-import cv2
-import pytesseract
-import tempfile
 
 st.set_page_config(layout="wide", page_title="Fórmulas")
 
