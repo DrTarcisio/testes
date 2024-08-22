@@ -45,12 +45,12 @@ if peso and altura and sexo:
 
             pm = int(altura)-105
             pmc = pm+0.3*(int(peso)-pm)
-            if int(pm)<int(peso):
+            if int(pm)>int(peso):
                 pmc = peso
         else:
             pm = int(altura)-100
             pmc = pm+0.3*(int(peso)-pm)
-            if int(pm)<int(peso):
+            if int(pm)>int(peso):
                 pmc = peso        
 
 if peso and altura and sexo:
