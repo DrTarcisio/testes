@@ -225,7 +225,7 @@ O2ER = DO2/VO2 ou (CaO2 - CvO2)/CaO2    [VR: < 25%]
 
 RVS = (PAM - PVC)/ DC * 80 
 
-DO2 = 10*pumpflow*CaO2
+DO2 = 10 * pumpflow * CaO2
 
 
                     ''')
