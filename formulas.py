@@ -143,7 +143,7 @@ with tab2:
             
             if cao2 and cvo2:
                 er_o2 = (cao2 - cvo2)/cao2
-                if er_o2 < 0.25:
+                if er_o2 > 0.25:
                     f'ERO2 = :red[{round(er_o2*100)}%]'
                 else:
                     f'ERO2 = {round(er_o2*100)}%'
